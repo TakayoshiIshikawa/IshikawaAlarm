@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" package="trident.ishikawatakayoshi.ishikawaalarm" android:versionCode="1" android:versionName="1.0" android:installLocation="preferExternal">
+  <uses-sdk android:minSdkVersion="23" android:targetSdkVersion="29" />
+  <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true" />
+  <uses-permission android:name="android.permission.WAKE_LOCK" />
+  <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+  <uses-permission android:name="android.permission.READ_FRAME_BUFFER" />
+  <application android:icon="@mipmap/app_icon" android:label="@string/app_name" android:theme="@style/UnityThemeSelector" android:debuggable="false" android:isGame="true" android:banner="@drawable/app_banner">
+    <activity android:name="com.unity3d.player.UnityPlayerActivity">
+    </activity>
+    <activity android:name="trident.ishikawatakayoshi.ishikawaalarm.ITAlarmActivity" android:label="@string/app_name" android:screenOrientation="sensorPortrait" android:launchMode="singleTask" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density" android:hardwareAccelerated="false">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+        <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+      </intent-filter>
+      <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
+    </activity>
+    <receiver android:name="trident.ishikawatakayoshi.ishikawaalarm.ITAlarmNotificationReceiver" android:process=":remote">
+      <intent-filter>
+        <action android:name="ITAlarmAction" />
+      </intent-filter>
+    </receiver>
+    <meta-data android:name="unity.build-id" android:value="4420b121-d7cc-426d-9416-527d6e9310e8" />
+    <meta-data android:name="unity.splash-mode" android:value="0" />
+    <meta-data android:name="unity.splash-enable" android:value="True" />
+  </application>
+  <uses-feature android:glEsVersion="0x00020000" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+  <uses-feature android:name="android.hardware.touchscreen.multitouch" android:required="false" />
+  <uses-feature android:name="android.hardware.touchscreen.multitouch.distinct" android:required="false" />
+</manifest>
