@@ -1,0 +1,2 @@
+include ':app', ':ishikawaalarm'
+rootProject.name='IshikawaAlarm'

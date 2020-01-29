@@ -1,0 +1,14 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="trident.ishikawatakayoshi.ishikawaalarm">
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+
+    <application>
+        <activity android:name="ITAlarmActivity" />
+        <receiver android:name="ITAlarmNotificationReceiver" android:process=":remote">
+            <intent-filter>
+                <action android:name="ITAlarmAction" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>
